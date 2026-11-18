@@ -91,6 +91,19 @@ html{scroll-behavior:smooth}
 .lb img{max-width:min(92vw,720px);max-height:86vh;border-radius:20px;transform:scale(.92);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .lb.open img{transform:none}
 .lb button{position:absolute;top:16px;right:16px;width:48px;height:48px;border-radius:50%;border:1px solid #4A3A4D;background:#1B121C;color:#F7F0E6;font-size:22px;cursor:pointer}
+
+@keyframes kb2{0%{transform:scale(1.02)}100%{transform:scale(1.08)}}
+.kb{animation:kb2 12s ease-in-out infinite alternate;transform-origin:50% 35%}
+@keyframes breathe{0%,100%{opacity:.55;transform:scale(.96)}50%{opacity:.95;transform:scale(1.06)}}
+.halo{position:absolute;inset:-14% -18%;border-radius:50%;background:radial-gradient(closest-side,rgba(229,139,242,.75),rgba(212,90,232,.35) 55%,transparent 80%);filter:blur(30px);animation:breathe 4.5s ease-in-out infinite;z-index:0;pointer-events:none}
+.rim{position:absolute;inset:-4px;border-radius:214px 214px 28px 28px;overflow:hidden;z-index:0;box-shadow:0 0 40px rgba(229,139,242,.45)}
+.rim::before{content:"";position:absolute;left:-50%;top:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent 0 20%,#F3E9C6 30%,#E58BF2 38%,transparent 50% 70%,#D45AE8 80%,#F3E9C6 86%,transparent 95%);animation:spin 6s linear infinite}
+.hero-photo .spark{z-index:2}
+.badge{position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:10px;white-space:nowrap;padding:12px 20px;border-radius:999px;background:rgba(243,233,198,.96);color:#1A0B1D;font-weight:600;font-size:14px;box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.5) inset;animation:badgeIn 1s 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes badgeIn{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
+.badge svg{animation:twinkle2 2.4s ease-in-out infinite}
+@keyframes twinkle2{0%,100%{transform:scale(.8) rotate(0)}50%{transform:scale(1.15) rotate(90deg)}}
+@media (prefers-reduced-motion: reduce){.badge{opacity:1}}
 </style>
 </head>
 <body>
@@ -136,16 +149,18 @@ Agendar pelo WhatsApp</a>
 <svg class="ring" viewBox="0 0 420 525" style="position: absolute; inset: -18px; width: calc(100% + 36px); height: calc(100% + 36px)" aria-hidden="true">
 <path d="M10 515 V210 A200 200 0 0 1 410 210 V515 Z" fill="none" stroke="#D45AE8" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 12"></path>
 </svg>
-<div style="position: absolute; inset: 0; border-radius: 210px 210px 24px 24px; overflow: hidden; border: 1px solid #3A2A3E">
+<div class="halo" aria-hidden="true"></div>
+<div class="rim" aria-hidden="true"></div>
+<div style="position: absolute; inset: 0; border-radius: 210px 210px 24px 24px; overflow: hidden; z-index: 1">
 <img class="kb" fetchpriority="high" src="assets/vitoria.jpg" alt="Vitoria Carvalho segurando suas pinças de extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
 </div>
 <svg class="spark" width="34" height="34" viewBox="0 0 24 24" style="top: 6%; left: -6%" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#F3E9C6"></path></svg>
 <svg class="spark" width="22" height="22" viewBox="0 0 24 24" style="top: 30%; right: -7%; animation-delay: .9s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg>
 <svg class="spark" width="28" height="28" viewBox="0 0 24 24" style="bottom: 14%; left: -9%; animation-delay: 1.6s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg>
 <svg class="spark" width="18" height="18" viewBox="0 0 24 24" style="bottom: 4%; right: 6%; animation-delay: 2.1s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#F3E9C6"></path></svg>
-<div style="position: absolute; left: -24px; bottom: 36px; display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 16px; background-color: #F3E9C6; color: #1A0B1D; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45)">
-<svg class="blink" width="30" height="20" viewBox="0 0 30 20" fill="none" stroke="#1A0B1D" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 12 Q15 0 28 12"></path><path d="M6 9 L3 4 M11 6 L10 1 M15 5 V0 M19 6 L20 1 M24 9 L27 4"></path></svg>
-<span style="font-weight: 600; font-size: 14px">Studio Vitoria Carvalho</span>
+<div class="badge">
+<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#9B3AAE"></path></svg>
+<span>Studio Vitoria Carvalho</span>
 </div>
 </div>
 </div>
