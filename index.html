@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vitoria Carvalho · Lash Designer em Campo Grande – MS</title>
+<meta name="description" content="Extensão de cílios em Campo Grande – MS: fio a fio, híbrido, volume russo e mega volume. Studio na Vila Nasser e atendimento a domicílio. Agende pelo WhatsApp.">
+<meta property="og:title" content="Vitoria Carvalho · Lash Designer">
+<meta property="og:description" content="Venha ficar cílhuda! Extensão de cílios em Campo Grande – MS.">
+<meta property="og:image" content="assets/vitoria.jpg">
+<meta name="theme-color" content="#0F0A10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0F0A10}
+a{color:#E58BF2}a:hover{color:#F4C2FA}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes ltr{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(90deg)}}
+@keyframes kenburns{0%{transform:scale(1.04) translate(0,0)}100%{transform:scale(1.14) translate(-2%,-2%)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-16px) rotate(1.5deg)}}
+@keyframes sweep{0%{transform:translateX(-120%) skewX(-20deg)}60%,100%{transform:translateX(260%) skewX(-20deg)}}
+@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(212,90,232,.55)}50%{transform:scale(1.06);box-shadow:0 0 0 18px rgba(212,90,232,0)}}
+@keyframes lash{0%,100%{transform:scaleY(1)}48%,52%{transform:scaleY(.1)}}
+@keyframes grow{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+.bar-lash{transform-origin:bottom;animation:grow 1.8s ease-in-out infinite}
+.bar-lash:nth-child(2){animation-delay:.15s}.bar-lash:nth-child(3){animation-delay:.3s}.bar-lash:nth-child(4){animation-delay:.45s}.bar-lash:nth-child(5){animation-delay:.6s}.bar-lash:nth-child(6){animation-delay:.75s}.bar-lash:nth-child(7){animation-delay:.9s}
+.rise{opacity:0;animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.7s}
+.track{display:flex;gap:22px;width:max-content;animation:ltr 40s linear infinite}
+.track.slow{animation-duration:60s}
+.track.fast{animation-duration:30s}
+.lane:hover .track{animation-play-state:paused}
+.spark{position:absolute;animation:twinkle 2.6s ease-in-out infinite;pointer-events:none}
+.kb{animation:kenburns 14s ease-in-out infinite alternate}
+.ring{animation:spin 30s linear infinite}
+.float{animation:float 7s ease-in-out infinite}
+.shine{position:relative;overflow:hidden}
+.shine::after{content:"";position:absolute;top:0;bottom:0;left:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);animation:sweep 3.2s ease-in-out infinite}
+.pulse{animation:pulse 2.2s ease-in-out infinite}
+.blink{transform-origin:center;animation:lash 5s ease-in-out infinite}
+.slide{transition:transform .5s cubic-bezier(.2,.7,.2,1),filter .5s}
+.slide:hover{transform:scale(1.04) translateY(-6px)}
+.slide img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.slide:hover img{transform:scale(1.08)}
+.navlink{color:#D9CEDB;text-decoration:none;transition:color .2s}
+.navlink:hover{color:#E58BF2}
+.svc{transition:transform .35s,border-color .35s,background-color .35s}
+.svc:hover{transform:translateY(-6px);border-color:#D45AE8;background-color:#22152A}
+@supports (animation-timeline: view()){
+.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+}
+@media (prefers-reduced-motion: reduce){
+*,*::after{animation:none !important;transition:none !important}
+.rise{opacity:1}
+}
+
+:root{--accent:#D45AE8}
+html{scroll-behavior:smooth}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.tabbtn{min-height:46px;padding:0 22px;border-radius:999px;font:600 15px Inter,sans-serif;cursor:pointer;background:transparent;color:#F7F0E6;border:1px solid #4A3A4D;transition:background-color .25s,color .25s,border-color .25s}
+.tabbtn[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#1A0B1D}
+.panelbox{border:1px solid #2E2231;border-radius:28px;background:#160F17;padding:36px}
+.panel{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+.panel[hidden]{display:none}
+.panel-head{flex:1 1 280px;display:flex;flex-direction:column;gap:14px}
+.panel-big{font-family:'Bodoni Moda',serif;font-style:italic;font-size:64px;line-height:1;color:var(--accent)}
+.panel-head h3{margin:0;font-family:'Bodoni Moda',serif;font-size:30px;font-weight:600}
+.panel-head p{margin:0;line-height:1.6}
+.muted{color:#BFB3C2}
+.panel-list{flex:2 1 420px;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.itm{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:#1F1521;line-height:1.5;opacity:0;animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.itm svg{flex:0 0 auto;margin-top:3px}.itm strong{color:#F7F0E6;font-weight:600}
+@media (max-width:640px){.navlink{display:none}.panelbox{padding:22px}h1{word-break:break-word}}
+@media (prefers-reduced-motion: reduce){.itm{opacity:1}}
+</style>
+</head>
+<body>
+<div style="font-family: Inter, system-ui, sans-serif; color: #F7F0E6; background-color: #0F0A10; min-height: 100vh; overflow-x: hidden">
+
+<header style="position: sticky; top: 0; z-index: 20; background-color: rgba(15, 10, 16, 0.82); backdrop-filter: blur(12px); border-bottom: 1px solid #2A1F2C">
+<nav style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between">
+<a href="#inicio" style="text-decoration: none; color: #F7F0E6; display: flex; flex-direction: column; line-height: 1.05">
+<span style="font-family: 'Bodoni Moda', serif; font-size: 22px; font-weight: 600">Vitoria Carvalho</span>
+<span style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #E58BF2">Lash Designer</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 26px; font-size: 15px">
+<a href="#trabalhos" class="navlink">Trabalhos</a>
+<a href="#videos" class="navlink">Vídeos</a>
+<a href="#sobre" class="navlink">Sobre</a>
+<a href="#servicos" class="navlink">Técnicas</a>
+<a href="#cuidados" class="navlink">Cuidados</a>
+<a href="#contato" class="navlink">Contato</a>
+<a href="#agendar" data-wa="1" class="shine" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; background-color: #D45AE8; color: #1A0B1D; font-weight: 600; text-decoration: none">Agendar</a>
+</div>
+</nav>
+</header>
+
+<section id="inicio" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 72px 24px 88px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
+<p class="rise d1" style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: #E58BF2">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+Campo Grande · MS
+</p>
+<h1 class="rise d2" style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(3.2rem, 7.4vw, 6.6rem); line-height: 0.98; letter-spacing: -0.02em">Venha ficar <em style="font-style: italic; font-weight: 600; color: #D45AE8">cílhuda</em></h1>
+<p class="rise d3" style="margin: 0; max-width: 520px; font-size: 19px; line-height: 1.6; color: #D9CEDB">Nunca é só sobre cílios. É sobre <strong style="color: #F7F0E6; font-weight: 600">autoestima, cuidado &amp; amor-próprio</strong>.</p>
+<div class="rise d4" style="display: flex; flex-wrap: wrap; gap: 14px">
+<a href="#agendar" data-wa="1" class="shine pulse" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 28px; border-radius: 999px; background-color: #D45AE8; color: #1A0B1D; font-weight: 600; font-size: 16px; text-decoration: none">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+Agendar pelo WhatsApp</a>
+<a href="#trabalhos" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1px solid #4A3A4D; color: #F7F0E6; font-weight: 600; text-decoration: none">Ver trabalhos</a>
+</div>
+<p class="rise d5" style="margin: 0; font-size: 14px; color: #BFB3C2">Rua Catarino de Almeida Barbosa, 455 · Vila Nasser</p>
+</div>
+
+<div class="rise d3" style="flex: 1 1 380px; display: flex; justify-content: center">
+<div style="position: relative; width: 420px; max-width: 100%; aspect-ratio: 4 / 5">
+<svg class="ring" viewBox="0 0 420 525" style="position: absolute; inset: -18px; width: calc(100% + 36px); height: calc(100% + 36px)" aria-hidden="true">
+<path d="M10 515 V210 A200 200 0 0 1 410 210 V515 Z" fill="none" stroke="#D45AE8" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 12"></path>
+</svg>
+<div style="position: absolute; inset: 0; border-radius: 210px 210px 24px 24px; overflow: hidden; border: 1px solid #3A2A3E">
+<img class="kb" src="assets/vitoria.jpg" alt="Vitoria Carvalho segurando suas pinças de extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</div>
+<svg class="spark" width="34" height="34" viewBox="0 0 24 24" style="top: 6%; left: -6%" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#F3E9C6"></path></svg>
+<svg class="spark" width="22" height="22" viewBox="0 0 24 24" style="top: 30%; right: -7%; animation-delay: .9s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg>
+<svg class="spark" width="28" height="28" viewBox="0 0 24 24" style="bottom: 14%; left: -9%; animation-delay: 1.6s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg>
+<svg class="spark" width="18" height="18" viewBox="0 0 24 24" style="bottom: 4%; right: 6%; animation-delay: 2.1s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#F3E9C6"></path></svg>
+<div style="position: absolute; left: -24px; bottom: 36px; display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 16px; background-color: #F3E9C6; color: #1A0B1D; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45)">
+<svg class="blink" width="30" height="20" viewBox="0 0 30 20" fill="none" stroke="#1A0B1D" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 12 Q15 0 28 12"></path><path d="M6 9 L3 4 M11 6 L10 1 M15 5 V0 M19 6 L20 1 M24 9 L27 4"></path></svg>
+<span style="font-weight: 600; font-size: 14px">Studio Vitoria Carvalho</span>
+</div>
+</div>
+</div>
+</section>
+
+<div style="background-color: #D45AE8; color: #1A0B1D; overflow: hidden; padding: 16px 0; transform: rotate(-1.2deg); margin: 0 -20px">
+<div class="track fast" style="gap: 40px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 30px; white-space: nowrap">
+
+<span style="display: flex; align-items: center; gap: 40px">Venha ficar cílhuda<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Autoestima<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Cuidado<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Amor-próprio<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Lash Designer<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Campo Grande<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Venha ficar cílhuda<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Autoestima<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Cuidado<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Amor-próprio<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Lash Designer<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+<span style="display: flex; align-items: center; gap: 40px">Campo Grande<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#1A0B1D"></path></svg></span>
+
+</div>
+</div>
+
+<section id="trabalhos" style="padding: 120px 0 40px">
+<div class="reveal" style="max-width: 1240px; margin: 0 auto 48px; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between">
+<div>
+<p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #E58BF2">Portfólio</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1">Olhares que <em style="color: #D45AE8">eu criei</em></h2>
+</div>
+<p style="margin: 0; max-width: 340px; color: #BFB3C2; line-height: 1.6">Passe o dedo ou o mouse por cima para pausar e ver cada resultado de perto.</p>
+</div>
+<div class="lane" style="overflow: hidden; padding: 12px 0">
+<div class="track">
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto2.jpg" alt="Cliente com extensão de cílios volumosa, olhar de perto" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto4.jpg" alt="Cliente sob luz lilás mostrando os cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto3.jpg" alt="Extensão de cílios com curvatura marcada, vista de cima" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto5.jpg" alt="Cílios volume intenso em cliente de sobrancelha clara" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto1.jpg" alt="Extensão de cílios efeito natural" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto6.jpg" alt="Cliente sorrindo após a aplicação dos cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto2.jpg" alt="Cliente com extensão de cílios volumosa, olhar de perto" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto4.jpg" alt="Cliente sob luz lilás mostrando os cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto3.jpg" alt="Extensão de cílios com curvatura marcada, vista de cima" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto5.jpg" alt="Cílios volume intenso em cliente de sobrancelha clara" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto1.jpg" alt="Extensão de cílios efeito natural" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img src="assets/foto6.jpg" alt="Cliente sorrindo após a aplicação dos cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+</div>
+</div>
+<div class="lane" style="overflow: hidden; padding: 12px 0">
+<div class="track slow" style="animation-delay: -12s">
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/foto6.jpg" alt="Cliente sorrindo com cílios novos" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/trabalho3.jpg" alt="Close de cílios volumosos" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/foto4.jpg" alt="Cliente mostrando o resultado" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/cilios-post.jpg" alt="Post: nunca é só sobre cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/foto3.jpg" alt="Olhar com extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/trabalho2.jpg" alt="Extensão aplicada, olho fechado" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/foto6.jpg" alt="Cliente sorrindo com cílios novos" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/trabalho3.jpg" alt="Close de cílios volumosos" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/foto4.jpg" alt="Cliente mostrando o resultado" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/cilios-post.jpg" alt="Post: nunca é só sobre cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/foto3.jpg" alt="Olhar com extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img src="assets/trabalho2.jpg" alt="Extensão aplicada, olho fechado" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+</div>
+</div>
+</section>
+
+<section id="videos" style="padding: 100px 0 40px">
+<div class="reveal" style="max-width: 1240px; margin: 0 auto 44px; padding: 0 24px">
+<p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #E58BF2">Reels</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1">Bastidores <em style="color: #D45AE8">em movimento</em></h2>
+</div>
+<div class="lane" style="overflow: hidden; padding: 12px 0">
+<div class="track slow">
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video1.mp4" poster="assets/poster1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Aplicação dos fios</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video2.mp4" poster="assets/poster2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Procedimento no studio</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video3.mp4" poster="assets/poster3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Resultado de perto</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video1.mp4" poster="assets/poster1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Aplicação dos fios</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video2.mp4" poster="assets/poster2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Procedimento no studio</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video3.mp4" poster="assets/poster3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Resultado de perto</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video1.mp4" poster="assets/poster1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Aplicação dos fios</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video2.mp4" poster="assets/poster2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Procedimento no studio</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video3.mp4" poster="assets/poster3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Resultado de perto</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video1.mp4" poster="assets/poster1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Aplicação dos fios</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video2.mp4" poster="assets/poster2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Procedimento no studio</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+<div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<video src="assets/video3.mp4" poster="assets/poster3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
+<span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Resultado de perto</span>
+<button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+</button>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="sobre" style="max-width: 1240px; margin: 0 auto; padding: 120px 24px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+<div class="reveal" style="flex: 1 1 340px; display: flex; justify-content: center; position: relative">
+<div class="float" style="width: 380px; max-width: 100%; aspect-ratio: 1077 / 1040; border-radius: 30px; overflow: hidden; border: 6px solid #F3E9C6; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5)">
+<img src="assets/caricatura.jpg" alt="Ilustração da Vitoria piscando e segurando duas pinças em formato de V" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</div>
+<svg class="spark" width="30" height="30" viewBox="0 0 24 24" style="top: -10px; right: 8%; animation-delay: .4s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg>
+<svg class="spark" width="20" height="20" viewBox="0 0 24 24" style="bottom: 6%; left: 6%; animation-delay: 1.3s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#F3E9C6"></path></svg>
+</div>
+<div class="reveal" style="flex: 1.3 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #E58BF2">Prazer, Vitoria</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(2.2rem, 4.4vw, 3.6rem); line-height: 1.05">Cada cílio aplicado com <em style="color: #D45AE8">carinho</em> e precisão</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #D9CEDB">Sou lash designer e atendo no meu studio na Vila Nasser, em Campo Grande. Acredito que um olhar bem feito vai além da estética: é sobre se sentir bonita, cuidada e confiante.</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #D9CEDB">[Conte aqui um pouco da sua história: há quanto tempo trabalha com cílios, cursos e o que mais ama na profissão.]</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px">
+<span style="padding: 10px 18px; border-radius: 999px; border: 1px solid #4A3A4D; font-size: 14px">Autoestima</span>
+<span style="padding: 10px 18px; border-radius: 999px; border: 1px solid #4A3A4D; font-size: 14px">Cuidado</span>
+<span style="padding: 10px 18px; border-radius: 999px; border: 1px solid #4A3A4D; font-size: 14px">Amor-próprio</span>
+</div>
+</div>
+</section>
+
+<section id="servicos" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 100px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between; margin-bottom: 44px">
+<div>
+<p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #E58BF2">Técnicas</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1">Escolha o seu <em style="color: #D45AE8">olhar</em></h2>
+</div>
+<p style="margin: 0; max-width: 440px; color: #BFB3C2; line-height: 1.65">Extensões de cílios são fios sintéticos (ou tecnológicos) aplicados sobre os cílios naturais para deixar o olhar mais volumoso, alongado e definido, sem precisar de máscara.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+
+<div class="svc reveal" style="border: 1px solid #2E2231; border-radius: 24px; padding: 30px; background-color: #160F17; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-family: 'Bodoni Moda', serif; font-size: 44px; color: #D45AE8">01</span>
+<span style="display: flex; gap: 3px; align-items: flex-end; height: 30px" aria-hidden="true">
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 14px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 18px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 16px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 20px"></span>
+
+</span>
+</div>
+<h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 26px; font-weight: 600">Fio a fio</h3>
+<span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #E58BF2">Clássico · natural</span>
+<p style="margin: 0; color: #BFB3C2; line-height: 1.6">Uma extensão em cada cílio natural. Resultado mais natural, ideal para quem quer leveza.</p>
+<a href="#agendar" data-wa="1" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #F7F0E6; text-decoration: none">Consultar valor
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+
+<div class="svc reveal" style="border: 1px solid #2E2231; border-radius: 24px; padding: 30px; background-color: #160F17; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-family: 'Bodoni Moda', serif; font-size: 44px; color: #D45AE8">02</span>
+<span style="display: flex; gap: 3px; align-items: flex-end; height: 30px" aria-hidden="true">
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 16px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 22px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 18px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 24px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 20px"></span>
+
+</span>
+</div>
+<h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 26px; font-weight: 600">Híbrido</h3>
+<span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #E58BF2">Natural + glamour</span>
+<p style="margin: 0; color: #BFB3C2; line-height: 1.6">A mistura do fio a fio com o volume: equilíbrio entre o natural e o glamuroso.</p>
+<a href="#agendar" data-wa="1" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #F7F0E6; text-decoration: none">Consultar valor
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+
+<div class="svc reveal" style="border: 1px solid #2E2231; border-radius: 24px; padding: 30px; background-color: #160F17; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-family: 'Bodoni Moda', serif; font-size: 44px; color: #D45AE8">03</span>
+<span style="display: flex; gap: 3px; align-items: flex-end; height: 30px" aria-hidden="true">
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 20px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 26px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 22px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 28px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 24px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 26px"></span>
+
+</span>
+</div>
+<h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 26px; font-weight: 600">Volume russo</h3>
+<span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #E58BF2">Cheio · marcante</span>
+<p style="margin: 0; color: #BFB3C2; line-height: 1.6">Vários fios bem finos em um único cílio, para um olhar mais cheio e marcante.</p>
+<a href="#agendar" data-wa="1" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #F7F0E6; text-decoration: none">Consultar valor
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+
+<div class="svc reveal" style="border: 1px solid #2E2231; border-radius: 24px; padding: 30px; background-color: #160F17; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-family: 'Bodoni Moda', serif; font-size: 44px; color: #D45AE8">04</span>
+<span style="display: flex; gap: 3px; align-items: flex-end; height: 30px" aria-hidden="true">
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 24px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 30px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 26px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 30px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 28px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 30px"></span>
+
+<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 26px"></span>
+
+</span>
+</div>
+<h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 26px; font-weight: 600">Mega volume</h3>
+<span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #E58BF2">Dramático</span>
+<p style="margin: 0; color: #BFB3C2; line-height: 1.6">Muito volumoso e dramático. O mais usado por quem gosta de efeito maquiagem.</p>
+<a href="#agendar" data-wa="1" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #F7F0E6; text-decoration: none">Consultar valor
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+
+</div>
+
+<div class="reveal" style="margin-top: 28px; border-radius: 28px; padding: 34px; background-color: #D45AE8; color: #1A0B1D; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 20px; flex: 1 1 420px">
+<span class="float" style="flex: 0 0 auto; width: 64px; height: 64px; border-radius: 50%; background-color: #1A0B1D; color: #F3E9C6; display: flex; align-items: center; justify-content: center">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-5h4v5"></path></svg>
+</span>
+<div>
+<h3 style="margin: 0 0 6px; font-family: 'Bodoni Moda', serif; font-size: 30px; font-weight: 600">Atendimento a domicílio</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">O valor inclui o serviço + taxa de deslocamento, para te atender com conforto e segurança.</p>
+</div>
+</div>
+<a href="#agendar" data-wa="1" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 26px; border-radius: 999px; background-color: #1A0B1D; color: #F7F0E6; font-weight: 600; text-decoration: none">Quero em casa</a>
+</div>
+</section>
+
+<section id="cuidados" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 120px">
+<div class="reveal" style="margin-bottom: 36px">
+<p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #E58BF2">Informações importantes</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1">Antes e depois <em style="color: #D45AE8">da aplicação</em></h2>
+</div>
+<div class="reveal tabs" role="tablist" aria-label="Informações sobre a extensão de cílios"><button type="button" role="tab" id="tab-cuidados" aria-controls="pn-cuidados" aria-selected="true" class="tabbtn" data-tab="cuidados">Cuidados</button><button type="button" role="tab" id="tab-duracao" aria-controls="pn-duracao" aria-selected="false" class="tabbtn" data-tab="duracao">Duração</button><button type="button" role="tab" id="tab-contra" aria-controls="pn-contra" aria-selected="false" class="tabbtn" data-tab="contra">Contraindicações</button><button type="button" role="tab" id="tab-alergia" aria-controls="pn-alergia" aria-selected="false" class="tabbtn" data-tab="alergia">Alergia à cola</button></div>
+<div class="reveal panelbox"><div class="panel" role="tabpanel" id="pn-cuidados" aria-labelledby="tab-cuidados">
+<div class="panel-head"><span class="panel-big">24h</span><h3>Cuidados após a aplicação</h3><p class="muted">Para que seus cílios durem mais e continuem lindos, siga esses cuidados:</p></div>
+<ul class="panel-list"><li class="itm" style="animation-delay:0.00s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Não molhar nas primeiras 24h.</strong> <span class="muted">Evitar água por 12 a 24 horas ajuda a cola a fixar melhor.</span></span></li><li class="itm" style="animation-delay:0.08s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Não esfregar nem puxar os fios.</strong> <span class="muted">Isso pode soltar as extensões antes da hora ou até arrancar os cílios naturais. Para remover, procure a profissional.</span></span></li><li class="itm" style="animation-delay:0.16s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Evitar produtos com óleo.</strong> <span class="muted">Demaquilante ou creme com óleo na região dos olhos enfraquece a cola.</span></span></li><li class="itm" style="animation-delay:0.24s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Dormir com cuidado.</strong> <span class="muted">Evite dormir com o rosto no travesseiro para não amassar os cílios.</span></span></li><li class="itm" style="animation-delay:0.32s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Evitar vapor e calor excessivo.</strong> <span class="muted">Sauna, vapor ou banho muito quente podem soltar a cola mais rápido.</span></span></li><li class="itm" style="animation-delay:0.40s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Lavar e escovar diariamente.</strong> <span class="muted">Use shampoo específico para cílios e uma escovinha para manter tudo alinhado.</span></span></li></ul></div><div class="panel" role="tabpanel" id="pn-duracao" aria-labelledby="tab-duracao" hidden>
+<div class="panel-head"><span class="panel-big">15–25</span><h3>Duração</h3><p class="muted">Quanto tempo dura a sua extensão e quando voltar.</p></div>
+<ul class="panel-list"><li class="itm" style="animation-delay:0.00s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Em média, 15 a 25 dias</strong> <span class="muted">de cílios lindos, seguindo os cuidados.</span></span></li><li class="itm" style="animation-delay:0.08s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Manutenção recomendada</strong> <span class="muted">a cada 2 ou 3 semanas.</span></span></li></ul></div><div class="panel" role="tabpanel" id="pn-contra" aria-labelledby="tab-contra" hidden>
+<div class="panel-head"><span class="panel-big">!</span><h3>Contraindicações</h3><p class="muted">A extensão não é indicada em casos de:</p></div>
+<ul class="panel-list"><li class="itm" style="animation-delay:0.00s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Alergia à cola.</strong> <span class="muted"></span></span></li><li class="itm" style="animation-delay:0.08s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Infecção ocular.</strong> <span class="muted"></span></span></li><li class="itm" style="animation-delay:0.16s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Blefarite ou irritação nos olhos.</strong> <span class="muted"></span></span></li></ul></div><div class="panel" role="tabpanel" id="pn-alergia" aria-labelledby="tab-alergia" hidden>
+<div class="panel-head"><span class="panel-big">Teste</span><h3>Aviso sobre alergia à cola</h3><p class="muted">A cola usada no procedimento pode causar reação alérgica em algumas pessoas, principalmente em quem já tem sensibilidade na região dos olhos. Por isso, sempre que possível, indicamos um teste de alergia antes.</p></div>
+<ul class="panel-list"><li class="itm" style="animation-delay:0.00s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Já teve coceira, vermelhidão, inchaço ou ardência</strong> <span class="muted">depois de aplicar cílios? Avise antes do atendimento.</span></span></li><li class="itm" style="animation-delay:0.08s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Teve alguma reação depois do procedimento?</strong> <span class="muted">Entre em contato para orientação e, se necessário, a remoção dos cílios.</span></span></li><li class="itm" style="animation-delay:0.16s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg><span><strong>Nossa prioridade</strong> <span class="muted">é sempre a sua segurança e o seu bem-estar.</span></span></li></ul></div></div>
+</section>
+
+<section id="feedback" style="padding: 40px 0 120px">
+<div class="reveal" style="max-width: 1240px; margin: 0 auto 44px; padding: 0 24px">
+<p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #E58BF2">Feedback</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1">Quem fez, <em style="color: #D45AE8">amou</em></h2>
+</div>
+<div class="lane" style="overflow: hidden; padding: 12px 0">
+<div class="track slow">
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Eu não era acostumada a fazer cílios, aí fiz e amei. Agora não vivo sem! Seu trabalho é incrível e você se dedica muito no que faz. Amei demais!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Eu gosto de cílios bem preenchidos e bem pretinhos, e você conseguiu alcançar exatamente essa expectativa. Fiquei muito satisfeita com o resultado, de verdade! E a experiência com você foi ótima, super atenciosa e delicada. Vou voltar com certeza!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Oii, estão intactos, eu estou amando!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Eu não era acostumada a fazer cílios, aí fiz e amei. Agora não vivo sem! Seu trabalho é incrível e você se dedica muito no que faz. Amei demais!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Eu gosto de cílios bem preenchidos e bem pretinhos, e você conseguiu alcançar exatamente essa expectativa. Fiquei muito satisfeita com o resultado, de verdade! E a experiência com você foi ótima, super atenciosa e delicada. Vou voltar com certeza!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Oii, estão intactos, eu estou amando!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Eu não era acostumada a fazer cílios, aí fiz e amei. Agora não vivo sem! Seu trabalho é incrível e você se dedica muito no que faz. Amei demais!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Eu gosto de cílios bem preenchidos e bem pretinhos, e você conseguiu alcançar exatamente essa expectativa. Fiquei muito satisfeita com o resultado, de verdade! E a experiência com você foi ótima, super atenciosa e delicada. Vou voltar com certeza!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Oii, estão intactos, eu estou amando!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Eu não era acostumada a fazer cílios, aí fiz e amei. Agora não vivo sem! Seu trabalho é incrível e você se dedica muito no que faz. Amei demais!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Eu gosto de cílios bem preenchidos e bem pretinhos, e você conseguiu alcançar exatamente essa expectativa. Fiquei muito satisfeita com o resultado, de verdade! E a experiência com você foi ótima, super atenciosa e delicada. Vou voltar com certeza!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 360px; min-height: 280px; border-radius: 26px; background-color: #F3E9C6; color: #1A0B1D; display: flex; flex-direction: column; gap: 18px; padding: 30px; box-sizing: border-box">
+<svg width="40" height="30" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17Q0 4 14 0l2 4Q8 7 8 14h8v16zM22 30V17q0-13 14-17l2 4q-8 3-8 10h8v16z" fill="#9B3AAE"></path></svg>
+<blockquote style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 19px; line-height: 1.5">Oii, estão intactos, eu estou amando!</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #6B5A6E">
+<span style="display: flex; gap: 2px; color: #9B3AAE" aria-label="Cinco estrelas">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 7L12 17.4 5.7 21.2l1.6-7L2 9.6 9 9z" fill="currentColor"></path></svg>
+</span>
+Cliente pelo WhatsApp
+</figcaption>
+</figure>
+
+</div>
+</div>
+</section>
+
+<footer id="contato" style="position: relative; background-color: #F3E9C6; color: #1A0B1D; overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; padding: 110px 24px 44px; display: flex; flex-direction: column; gap: 44px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: flex-end">
+<h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(2.8rem, 7.5vw, 6.4rem); line-height: 0.98; letter-spacing: -0.02em">Seu horário<br>te <em style="color: #9B3AAE">espera</em></h2>
+<a href="#agendar" data-wa="1" class="shine pulse" style="display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 0 34px; border-radius: 999px; background-color: #1A0B1D; color: #F7F0E6; font-weight: 600; font-size: 18px; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+Agendar pelo WhatsApp</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; border-top: 1px solid rgba(26, 11, 29, 0.2); padding-top: 32px; font-size: 16px; line-height: 1.6">
+<div><div style="font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: #6B5A6E; margin-bottom: 6px">Endereço</div>Rua Catarino de Almeida Barbosa, 455<br>Vila Nasser · Campo Grande – MS</div>
+<div><div style="font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: #6B5A6E; margin-bottom: 6px">Instagram</div><a href="https://www.instagram.com/studiovitoriacarvalho.lash/" style="color: #1A0B1D; font-weight: 600">@studiovitoriacarvalho.lash</a></div>
+<div><div style="font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: #6B5A6E; margin-bottom: 6px">WhatsApp</div>[(67) NÚMERO]</div>
+</div>
+<p style="margin: 0; font-size: 13px; color: #6B5A6E">© 2026 Studio Vitoria Carvalho · Lash Designer</p>
+</div>
+</footer>
+
+</div>
+
+<script>
+/* === EDITE AQUI: número de WhatsApp (só números, com 55 + DDD) === */
+const WHATSAPP = "55[NUMERO]";
+const MENSAGEM = "Olá, Vitoria! Vim pelo site e quero agendar um horário.";
+document.querySelectorAll('[data-wa]').forEach(a => {
+  a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MENSAGEM);
+  a.target = "_blank"; a.rel = "noopener";
+});
+document.querySelectorAll('.tabbtn').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.tabbtn').forEach(x => x.setAttribute('aria-selected', x === b ? 'true' : 'false'));
+  document.querySelectorAll('.panel').forEach(p => { p.hidden = p.id !== 'pn-' + b.dataset.tab; });
+}));
+document.querySelectorAll('.snd').forEach(b => b.addEventListener('click', () => {
+  const v = b.parentElement.querySelector('video'); if (!v) return;
+  v.muted = !v.muted; if (v.paused) v.play();
+}));
+document.querySelectorAll('video').forEach(v => { v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); });
+</script>
+</body>
+</html>
