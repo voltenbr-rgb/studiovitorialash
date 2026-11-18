@@ -75,6 +75,22 @@ html{scroll-behavior:smooth}
 .itm svg{flex:0 0 auto;margin-top:3px}.itm strong{color:#F7F0E6;font-weight:600}
 @media (max-width:640px){.navlink{display:none}.panelbox{padding:22px}h1{word-break:break-word}}
 @media (prefers-reduced-motion: reduce){.itm{opacity:1}}
+
+.hero-photo{transition:none}
+@media (max-width:640px){
+ .hero-photo{width:240px !important}
+ .about-photo{width:240px !important}
+ .tall{width:220px !important;height:293px !important}
+ .round{width:170px !important;height:170px !important}
+ #inicio{padding-top:40px !important;padding-bottom:56px !important;gap:40px !important}
+}
+.zoomable{cursor:zoom-in}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;background:var(--accent);color:#1A0B1D;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.45);animation:pulse 2.2s ease-in-out infinite;text-decoration:none}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(10,6,11,.92);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s}
+.lb.open{opacity:1;pointer-events:auto}
+.lb img{max-width:min(92vw,720px);max-height:86vh;border-radius:20px;transform:scale(.92);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.lb.open img{transform:none}
+.lb button{position:absolute;top:16px;right:16px;width:48px;height:48px;border-radius:50%;border:1px solid #4A3A4D;background:#1B121C;color:#F7F0E6;font-size:22px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -115,13 +131,13 @@ Agendar pelo WhatsApp</a>
 <p class="rise d5" style="margin: 0; font-size: 14px; color: #BFB3C2">Rua Catarino de Almeida Barbosa, 455 · Vila Nasser</p>
 </div>
 
-<div class="rise d3" style="flex: 1 1 380px; display: flex; justify-content: center">
-<div style="position: relative; width: 420px; max-width: 100%; aspect-ratio: 4 / 5">
+<div class="rise d3" style="flex: 1 1 300px; display: flex; justify-content: center">
+<div class="hero-photo" style="position: relative; width: 330px; max-width: 100%; aspect-ratio: 4 / 5">
 <svg class="ring" viewBox="0 0 420 525" style="position: absolute; inset: -18px; width: calc(100% + 36px); height: calc(100% + 36px)" aria-hidden="true">
 <path d="M10 515 V210 A200 200 0 0 1 410 210 V515 Z" fill="none" stroke="#D45AE8" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 12"></path>
 </svg>
 <div style="position: absolute; inset: 0; border-radius: 210px 210px 24px 24px; overflow: hidden; border: 1px solid #3A2A3E">
-<img class="kb" src="assets/vitoria.jpg" alt="Vitoria Carvalho segurando suas pinças de extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img class="kb" fetchpriority="high" src="assets/vitoria.jpg" alt="Vitoria Carvalho segurando suas pinças de extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
 </div>
 <svg class="spark" width="34" height="34" viewBox="0 0 24 24" style="top: 6%; left: -6%" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#F3E9C6"></path></svg>
 <svg class="spark" width="22" height="22" viewBox="0 0 24 24" style="top: 30%; right: -7%; animation-delay: .9s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg>
@@ -176,86 +192,86 @@ Agendar pelo WhatsApp</a>
 <div class="lane" style="overflow: hidden; padding: 12px 0">
 <div class="track">
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
 
-<img src="assets/foto2.jpg" alt="Cliente com extensão de cílios volumosa, olhar de perto" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-
-<img src="assets/foto4.jpg" alt="Cliente sob luz lilás mostrando os cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto2.jpg" alt="Cliente com extensão de cílios volumosa, olhar de perto" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
 
-<img src="assets/foto3.jpg" alt="Extensão de cílios com curvatura marcada, vista de cima" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-
-<img src="assets/foto5.jpg" alt="Cílios volume intenso em cliente de sobrancelha clara" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto4.jpg" alt="Cliente sob luz lilás mostrando os cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
 
-<img src="assets/foto1.jpg" alt="Extensão de cílios efeito natural" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-
-<img src="assets/foto6.jpg" alt="Cliente sorrindo após a aplicação dos cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto3.jpg" alt="Extensão de cílios com curvatura marcada, vista de cima" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
 
-<img src="assets/foto2.jpg" alt="Cliente com extensão de cílios volumosa, olhar de perto" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-
-<img src="assets/foto4.jpg" alt="Cliente sob luz lilás mostrando os cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto5.jpg" alt="Cílios volume intenso em cliente de sobrancelha clara" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
 
-<img src="assets/foto3.jpg" alt="Extensão de cílios com curvatura marcada, vista de cima" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-
-<img src="assets/foto5.jpg" alt="Cílios volume intenso em cliente de sobrancelha clara" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto1.jpg" alt="Extensão de cílios efeito natural" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
 
-<img src="assets/foto1.jpg" alt="Extensão de cílios efeito natural" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto6.jpg" alt="Cliente sorrindo após a aplicação dos cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
 
-<img src="assets/foto6.jpg" alt="Cliente sorrindo após a aplicação dos cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto2.jpg" alt="Cliente com extensão de cílios volumosa, olhar de perto" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img loading="lazy" decoding="async" src="assets/foto4.jpg" alt="Cliente sob luz lilás mostrando os cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img loading="lazy" decoding="async" src="assets/foto3.jpg" alt="Extensão de cílios com curvatura marcada, vista de cima" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img loading="lazy" decoding="async" src="assets/foto5.jpg" alt="Cílios volume intenso em cliente de sobrancelha clara" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img loading="lazy" decoding="async" src="assets/foto1.jpg" alt="Extensão de cílios efeito natural" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable tall" style="margin: 0; flex: 0 0 auto; width: 300px; height: 400px; border-radius: 26px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
+
+<img loading="lazy" decoding="async" src="assets/foto6.jpg" alt="Cliente sorrindo após a aplicação dos cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
@@ -265,86 +281,86 @@ Agendar pelo WhatsApp</a>
 <div class="lane" style="overflow: hidden; padding: 12px 0">
 <div class="track slow" style="animation-delay: -12s">
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
 
-<img src="assets/foto6.jpg" alt="Cliente sorrindo com cílios novos" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
-
-<img src="assets/trabalho3.jpg" alt="Close de cílios volumosos" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto6.jpg" alt="Cliente sorrindo com cílios novos" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
 
-<img src="assets/foto4.jpg" alt="Cliente mostrando o resultado" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
-
-<img src="assets/cilios-post.jpg" alt="Post: nunca é só sobre cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto5.jpg" alt="Close de cílios volumosos" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
 
-<img src="assets/foto3.jpg" alt="Olhar com extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
-
-<img src="assets/trabalho2.jpg" alt="Extensão aplicada, olho fechado" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto4.jpg" alt="Cliente mostrando o resultado" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
 
-<img src="assets/foto6.jpg" alt="Cliente sorrindo com cílios novos" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
-
-<img src="assets/trabalho3.jpg" alt="Close de cílios volumosos" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto1.jpg" alt="Extensão de cílios efeito natural" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
 
-<img src="assets/foto4.jpg" alt="Cliente mostrando o resultado" style="width: 100%; height: 100%; object-fit: cover; display: block">
-
-
-</figure>
-
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
-
-<img src="assets/cilios-post.jpg" alt="Post: nunca é só sobre cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto3.jpg" alt="Olhar com extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
 
-<img src="assets/foto3.jpg" alt="Olhar com extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto2.jpg" alt="Cílios volumosos, olhar de perto" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
 
-<figure class="slide" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
 
-<img src="assets/trabalho2.jpg" alt="Extensão aplicada, olho fechado" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<img loading="lazy" decoding="async" src="assets/foto6.jpg" alt="Cliente sorrindo com cílios novos" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img loading="lazy" decoding="async" src="assets/foto5.jpg" alt="Close de cílios volumosos" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img loading="lazy" decoding="async" src="assets/foto4.jpg" alt="Cliente mostrando o resultado" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img loading="lazy" decoding="async" src="assets/foto1.jpg" alt="Extensão de cílios efeito natural" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img loading="lazy" decoding="async" src="assets/foto3.jpg" alt="Olhar com extensão de cílios" style="width: 100%; height: 100%; object-fit: cover; display: block">
+
+
+</figure>
+
+<figure class="slide zoomable round" style="margin: 0; flex: 0 0 auto; width: 240px; height: 240px; border-radius: 120px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231">
+
+<img loading="lazy" decoding="async" src="assets/foto2.jpg" alt="Cílios volumosos, olhar de perto" style="width: 100%; height: 100%; object-fit: cover; display: block">
 
 
 </figure>
@@ -362,7 +378,7 @@ Agendar pelo WhatsApp</a>
 <div class="track slow">
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video1.mp4" poster="assets/poster1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video1.mp4" poster="assets/poster1.jpg" muted loop playsinline preload="none" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Aplicação dos fios</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -371,7 +387,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video2.mp4" poster="assets/poster2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video2.mp4" poster="assets/poster2.jpg" muted loop playsinline preload="none" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Procedimento no studio</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -380,7 +396,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video3.mp4" poster="assets/poster3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video3.mp4" poster="assets/poster3.jpg" muted loop playsinline preload="none" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Resultado de perto</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -389,7 +405,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video1.mp4" poster="assets/poster1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video1.mp4" poster="assets/poster1.jpg" muted loop playsinline preload="none" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Aplicação dos fios</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -398,7 +414,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video2.mp4" poster="assets/poster2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video2.mp4" poster="assets/poster2.jpg" muted loop playsinline preload="none" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Procedimento no studio</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -407,7 +423,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video3.mp4" poster="assets/poster3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video3.mp4" poster="assets/poster3.jpg" muted loop playsinline preload="none" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Resultado de perto</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -416,7 +432,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video1.mp4" poster="assets/poster1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video1.mp4" poster="assets/poster1.jpg" muted loop playsinline preload="none" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Aplicação dos fios</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -425,7 +441,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video2.mp4" poster="assets/poster2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video2.mp4" poster="assets/poster2.jpg" muted loop playsinline preload="none" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Procedimento no studio</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -434,7 +450,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video3.mp4" poster="assets/poster3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video3.mp4" poster="assets/poster3.jpg" muted loop playsinline preload="none" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Resultado de perto</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -443,7 +459,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video1.mp4" poster="assets/poster1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video1.mp4" poster="assets/poster1.jpg" muted loop playsinline preload="none" aria-label="Aplicação dos fios" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Aplicação dos fios</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -452,7 +468,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video2.mp4" poster="assets/poster2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video2.mp4" poster="assets/poster2.jpg" muted loop playsinline preload="none" aria-label="Procedimento no studio" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Procedimento no studio</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -461,7 +477,7 @@ Agendar pelo WhatsApp</a>
 </div>
 
 <div class="slide" style="flex: 0 0 auto; width: 260px; height: 462px; border-radius: 28px; overflow: hidden; background-color: #1B121C; border: 1px solid #2E2231; position: relative">
-<video src="assets/video3.mp4" poster="assets/poster3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<video src="assets/video3.mp4" poster="assets/poster3.jpg" muted loop playsinline preload="none" aria-label="Resultado de perto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
 <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 120px; background: linear-gradient(transparent, rgba(15, 10, 16, 0.85))"></div>
 <span style="position: absolute; left: 18px; bottom: 20px; font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 19px; color: #F7F0E6">Resultado de perto</span>
 <button type="button" class="snd" aria-label="Ligar ou desligar o som" style="position: absolute; right: 12px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%; border: none; background-color: #D45AE8; color: #1A0B1D; display: flex; align-items: center; justify-content: center; cursor: pointer">
@@ -475,8 +491,8 @@ Agendar pelo WhatsApp</a>
 
 <section id="sobre" style="max-width: 1240px; margin: 0 auto; padding: 120px 24px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
 <div class="reveal" style="flex: 1 1 340px; display: flex; justify-content: center; position: relative">
-<div class="float" style="width: 380px; max-width: 100%; aspect-ratio: 1077 / 1040; border-radius: 30px; overflow: hidden; border: 6px solid #F3E9C6; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5)">
-<img src="assets/caricatura.jpg" alt="Ilustração da Vitoria piscando e segurando duas pinças em formato de V" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<div class="float about-photo" style="width: 300px; max-width: 100%; aspect-ratio: 1077 / 1040; border-radius: 30px; overflow: hidden; border: 6px solid #F3E9C6; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5)">
+<img loading="lazy" decoding="async" src="assets/caricatura.jpg" alt="Ilustração da Vitoria piscando e segurando duas pinças em formato de V" style="width: 100%; height: 100%; object-fit: cover; display: block">
 </div>
 <svg class="spark" width="30" height="30" viewBox="0 0 24 24" style="top: -10px; right: 8%; animation-delay: .4s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#E58BF2"></path></svg>
 <svg class="spark" width="20" height="20" viewBox="0 0 24 24" style="bottom: 6%; left: 6%; animation-delay: 1.3s" aria-hidden="true"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#F3E9C6"></path></svg>
@@ -848,6 +864,8 @@ Agendar pelo WhatsApp</a>
 
 </div>
 
+<a href="#agendar" data-wa="1" class="wa-float" aria-label="Agendar pelo WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"></path></svg></a>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button type="button" id="lbClose" aria-label="Fechar">✕</button><img id="lbImg" alt=""></div>
 <script>
 /* === EDITE AQUI: número de WhatsApp (só números, com 55 + DDD) === */
 const WHATSAPP = "55[NUMERO]";
@@ -864,7 +882,21 @@ document.querySelectorAll('.snd').forEach(b => b.addEventListener('click', () =>
   const v = b.parentElement.querySelector('video'); if (!v) return;
   v.muted = !v.muted; if (v.paused) v.play();
 }));
-document.querySelectorAll('video').forEach(v => { v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); });
+/* Vídeos: só tocam quando aparecem na tela (economiza dados no celular) */
+const vio = new IntersectionObserver(es => es.forEach(e => {
+  const v = e.target;
+  if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+  else v.pause();
+}), { threshold: 0.25 });
+document.querySelectorAll('video').forEach(v => { v.muted = true; vio.observe(v); });
+/* Toque na foto para ampliar */
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+const closeLb = () => lb.classList.remove('open');
+document.querySelectorAll('.zoomable img').forEach(img => img.addEventListener('click', () => {
+  lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('open');
+}));
+lb.addEventListener('click', e => { if (e.target !== lbImg) closeLb(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 </script>
 </body>
 </html>
