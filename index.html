@@ -104,6 +104,20 @@ html{scroll-behavior:smooth}
 .badge svg{animation:twinkle2 2.4s ease-in-out infinite}
 @keyframes twinkle2{0%,100%{transform:scale(.8) rotate(0)}50%{transform:scale(1.15) rotate(90deg)}}
 @media (prefers-reduced-motion: reduce){.badge{opacity:1}}
+
+.svc-lane{margin:8px calc(50% - 50vw) 0;overflow:hidden;padding:12px 0}
+.svc-track{gap:22px;animation-duration:45s}
+.svc-card{position:relative;flex:0 0 auto;width:290px;height:420px;border-radius:28px;overflow:hidden;background:#1B121C;border:1px solid #2E2231;transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s}
+.svc-card:hover{transform:translateY(-8px);border-color:var(--accent)}
+.svc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.svc-card:hover img{transform:scale(1.08)}
+.svc-card::after{content:"";position:absolute;inset:40% 0 0 0;background:linear-gradient(transparent,rgba(15,10,16,.92) 70%);pointer-events:none}
+.svc-price{position:absolute;top:16px;right:16px;z-index:2;padding:8px 14px;border-radius:999px;background:#F3E9C6;color:#1A0B1D;font-weight:700;font-size:15px;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.svc-info{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px;display:flex;flex-direction:column;gap:8px}
+.svc-info h3{margin:0;font-family:'Bodoni Moda',serif;font-size:28px;font-weight:600;color:#F7F0E6}
+.svc-info p{margin:0;font-size:14px;line-height:1.5;color:#D9CEDB}
+.svc-btn{margin-top:6px;align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--accent);color:#1A0B1D !important;font-weight:600;font-size:14px;text-decoration:none}
+@media (max-width:640px){.svc-card{width:240px;height:350px}.svc-info h3{font-size:24px}}
 </style>
 </head>
 <body>
@@ -528,115 +542,106 @@ Agendar pelo WhatsApp</a>
 <section id="servicos" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 100px">
 <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between; margin-bottom: 44px">
 <div>
-<p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #E58BF2">Técnicas</p>
+<p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #E58BF2">Técnicas e valores</p>
 <h2 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1">Escolha o seu <em style="color: #D45AE8">olhar</em></h2>
 </div>
 <p style="margin: 0; max-width: 440px; color: #BFB3C2; line-height: 1.65">Extensões de cílios são fios sintéticos (ou tecnológicos) aplicados sobre os cílios naturais para deixar o olhar mais volumoso, alongado e definido, sem precisar de máscara.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
-
-<div class="svc reveal" style="border: 1px solid #2E2231; border-radius: 24px; padding: 30px; background-color: #160F17; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: center; justify-content: space-between">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 44px; color: #D45AE8">01</span>
-<span style="display: flex; gap: 3px; align-items: flex-end; height: 30px" aria-hidden="true">
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 14px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 18px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 16px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 20px"></span>
-
-</span>
+<div class="svc-lane lane">
+<div class="track svc-track">
+<article class="svc-card">
+<img loading="lazy" decoding="async" src="assets/servico-volume-brasileiro.jpg" alt="Resultado da técnica Volume Brasileiro">
+<span class="svc-price">R$ 100,00</span>
+<div class="svc-info">
+<h3>Volume Brasileiro</h3>
+<p>Fios em formato Y que dão volume leve e um efeito natural e preenchido.</p>
+<a href="#agendar" data-wa="1" data-servico="Volume Brasileiro" class="svc-btn" aria-label="Agendar Volume Brasileiro">Agendar</a>
 </div>
-<h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 26px; font-weight: 600">Fio a fio</h3>
-<span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #E58BF2">Clássico · natural</span>
-<p style="margin: 0; color: #BFB3C2; line-height: 1.6">Uma extensão em cada cílio natural. Resultado mais natural, ideal para quem quer leveza.</p>
-<a href="#agendar" data-wa="1" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #F7F0E6; text-decoration: none">Consultar valor
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</article>
+<article class="svc-card">
+<img loading="lazy" decoding="async" src="assets/servico-volume-egipcio.jpg" alt="Resultado da técnica Volume Egípcio">
+<span class="svc-price">R$ 120,00</span>
+<div class="svc-info">
+<h3>Volume Egípcio</h3>
+<p>Fios em formato W, com mais densidade e um olhar marcante.</p>
+<a href="#agendar" data-wa="1" data-servico="Volume Egípcio" class="svc-btn" aria-label="Agendar Volume Egípcio">Agendar</a>
 </div>
-
-<div class="svc reveal" style="border: 1px solid #2E2231; border-radius: 24px; padding: 30px; background-color: #160F17; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: center; justify-content: space-between">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 44px; color: #D45AE8">02</span>
-<span style="display: flex; gap: 3px; align-items: flex-end; height: 30px" aria-hidden="true">
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 16px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 22px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 18px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 24px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 20px"></span>
-
-</span>
+</article>
+<article class="svc-card">
+<img loading="lazy" decoding="async" src="assets/servico-5d.jpg" alt="Resultado da técnica 5D">
+<span class="svc-price">R$ 130,00</span>
+<div class="svc-info">
+<h3>5D</h3>
+<p>Leques com 5 pontas por fio: volume intenso e olhar bem preenchido.</p>
+<a href="#agendar" data-wa="1" data-servico="5D" class="svc-btn" aria-label="Agendar 5D">Agendar</a>
 </div>
-<h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 26px; font-weight: 600">Híbrido</h3>
-<span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #E58BF2">Natural + glamour</span>
-<p style="margin: 0; color: #BFB3C2; line-height: 1.6">A mistura do fio a fio com o volume: equilíbrio entre o natural e o glamuroso.</p>
-<a href="#agendar" data-wa="1" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #F7F0E6; text-decoration: none">Consultar valor
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</article>
+<article class="svc-card">
+<img loading="lazy" decoding="async" src="assets/servico-volume-russo.jpg" alt="Resultado da técnica Volume Russo">
+<span class="svc-price">R$ 140,00</span>
+<div class="svc-info">
+<h3>Volume Russo</h3>
+<p>Vários fios bem finos em um único cílio: mais cheio e marcante.</p>
+<a href="#agendar" data-wa="1" data-servico="Volume Russo" class="svc-btn" aria-label="Agendar Volume Russo">Agendar</a>
 </div>
-
-<div class="svc reveal" style="border: 1px solid #2E2231; border-radius: 24px; padding: 30px; background-color: #160F17; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: center; justify-content: space-between">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 44px; color: #D45AE8">03</span>
-<span style="display: flex; gap: 3px; align-items: flex-end; height: 30px" aria-hidden="true">
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 20px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 26px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 22px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 28px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 24px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 26px"></span>
-
-</span>
+</article>
+<article class="svc-card">
+<img loading="lazy" decoding="async" src="assets/servico-fio-a-fio.jpg" alt="Resultado da técnica Fio a fio">
+<span class="svc-price">R$ 150,00</span>
+<div class="svc-info">
+<h3>Fio a fio</h3>
+<p>Uma extensão em cada cílio natural. Resultado leve e natural.</p>
+<a href="#agendar" data-wa="1" data-servico="Fio a fio" class="svc-btn" aria-label="Agendar Fio a fio">Agendar</a>
 </div>
-<h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 26px; font-weight: 600">Volume russo</h3>
-<span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #E58BF2">Cheio · marcante</span>
-<p style="margin: 0; color: #BFB3C2; line-height: 1.6">Vários fios bem finos em um único cílio, para um olhar mais cheio e marcante.</p>
-<a href="#agendar" data-wa="1" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #F7F0E6; text-decoration: none">Consultar valor
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</article>
+<article class="svc-card" aria-hidden="true">
+<img loading="lazy" decoding="async" src="assets/servico-volume-brasileiro.jpg" alt="Resultado da técnica Volume Brasileiro">
+<span class="svc-price">R$ 100,00</span>
+<div class="svc-info">
+<h3>Volume Brasileiro</h3>
+<p>Fios em formato Y que dão volume leve e um efeito natural e preenchido.</p>
+<a href="#agendar" data-wa="1" data-servico="Volume Brasileiro" class="svc-btn" tabindex="-1" aria-label="Agendar Volume Brasileiro">Agendar</a>
 </div>
-
-<div class="svc reveal" style="border: 1px solid #2E2231; border-radius: 24px; padding: 30px; background-color: #160F17; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: center; justify-content: space-between">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 44px; color: #D45AE8">04</span>
-<span style="display: flex; gap: 3px; align-items: flex-end; height: 30px" aria-hidden="true">
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 24px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 30px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 26px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 30px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 28px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 30px"></span>
-
-<span class="bar-lash" style="width: 4px; border-radius: 2px; background-color: #F7F0E6; height: 26px"></span>
-
-</span>
+</article>
+<article class="svc-card" aria-hidden="true">
+<img loading="lazy" decoding="async" src="assets/servico-volume-egipcio.jpg" alt="Resultado da técnica Volume Egípcio">
+<span class="svc-price">R$ 120,00</span>
+<div class="svc-info">
+<h3>Volume Egípcio</h3>
+<p>Fios em formato W, com mais densidade e um olhar marcante.</p>
+<a href="#agendar" data-wa="1" data-servico="Volume Egípcio" class="svc-btn" tabindex="-1" aria-label="Agendar Volume Egípcio">Agendar</a>
 </div>
-<h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-size: 26px; font-weight: 600">Mega volume</h3>
-<span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #E58BF2">Dramático</span>
-<p style="margin: 0; color: #BFB3C2; line-height: 1.6">Muito volumoso e dramático. O mais usado por quem gosta de efeito maquiagem.</p>
-<a href="#agendar" data-wa="1" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: #F7F0E6; text-decoration: none">Consultar valor
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</article>
+<article class="svc-card" aria-hidden="true">
+<img loading="lazy" decoding="async" src="assets/servico-5d.jpg" alt="Resultado da técnica 5D">
+<span class="svc-price">R$ 130,00</span>
+<div class="svc-info">
+<h3>5D</h3>
+<p>Leques com 5 pontas por fio: volume intenso e olhar bem preenchido.</p>
+<a href="#agendar" data-wa="1" data-servico="5D" class="svc-btn" tabindex="-1" aria-label="Agendar 5D">Agendar</a>
 </div>
-
+</article>
+<article class="svc-card" aria-hidden="true">
+<img loading="lazy" decoding="async" src="assets/servico-volume-russo.jpg" alt="Resultado da técnica Volume Russo">
+<span class="svc-price">R$ 140,00</span>
+<div class="svc-info">
+<h3>Volume Russo</h3>
+<p>Vários fios bem finos em um único cílio: mais cheio e marcante.</p>
+<a href="#agendar" data-wa="1" data-servico="Volume Russo" class="svc-btn" tabindex="-1" aria-label="Agendar Volume Russo">Agendar</a>
 </div>
-
+</article>
+<article class="svc-card" aria-hidden="true">
+<img loading="lazy" decoding="async" src="assets/servico-fio-a-fio.jpg" alt="Resultado da técnica Fio a fio">
+<span class="svc-price">R$ 150,00</span>
+<div class="svc-info">
+<h3>Fio a fio</h3>
+<p>Uma extensão em cada cílio natural. Resultado leve e natural.</p>
+<a href="#agendar" data-wa="1" data-servico="Fio a fio" class="svc-btn" tabindex="-1" aria-label="Agendar Fio a fio">Agendar</a>
+</div>
+</article>
+</div>
+</div>
+<p class="reveal" style="margin: 26px 0 0; color: #BFB3C2; font-size: 15px">Também faço <strong style="color: #F7F0E6">Híbrido</strong> e <strong style="color: #F7F0E6">Mega Volume</strong>. <a href="#agendar" data-wa="1" data-servico="Híbrido ou Mega Volume">Consulte o valor</a>.</p>
 <div class="reveal" style="margin-top: 28px; border-radius: 28px; padding: 34px; background-color: #D45AE8; color: #1A0B1D; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between">
 <div style="display: flex; align-items: center; gap: 20px; flex: 1 1 420px">
 <span class="float" style="flex: 0 0 auto; width: 64px; height: 64px; border-radius: 50%; background-color: #1A0B1D; color: #F3E9C6; display: flex; align-items: center; justify-content: center">
@@ -886,7 +891,8 @@ Agendar pelo WhatsApp</a>
 const WHATSAPP = "5567992604640";
 const MENSAGEM = "Olá, Vitoria! Vim pelo site e quero agendar um horário.";
 document.querySelectorAll('[data-wa]').forEach(a => {
-  a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MENSAGEM);
+  const msg = a.dataset.servico ? "Olá, Vitoria! Vim pelo site e quero agendar: " + a.dataset.servico + "." : MENSAGEM;
+  a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
   a.target = "_blank"; a.rel = "noopener";
 });
 document.querySelectorAll('.tabbtn').forEach(b => b.addEventListener('click', () => {
