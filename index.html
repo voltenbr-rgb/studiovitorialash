@@ -32,7 +32,7 @@ a{color:#E58BF2}a:hover{color:#F4C2FA}
 .track{display:flex;gap:22px;width:max-content;animation:ltr 40s linear infinite}
 .track.slow{animation-duration:60s}
 .track.fast{animation-duration:30s}
-.lane:hover .track{animation-play-state:paused}
+
 .spark{position:absolute;animation:twinkle 2.6s ease-in-out infinite;pointer-events:none}
 .kb{animation:kenburns 14s ease-in-out infinite alternate}
 .ring{animation:spin 30s linear infinite}
@@ -118,6 +118,11 @@ html{scroll-behavior:smooth}
 .svc-info p{margin:0;font-size:14px;line-height:1.5;color:#D9CEDB}
 .svc-btn{margin-top:6px;align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--accent);color:#1A0B1D !important;font-weight:600;font-size:14px;text-decoration:none}
 @media (max-width:640px){.svc-card{width:240px;height:350px}.svc-info h3{font-size:24px}}
+
+.lane{touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.lane.dragging{cursor:grabbing}
+.lane img,.lane video{-webkit-user-drag:none;user-drag:none}
+.track.js-drive{animation:none !important;will-change:transform}
 </style>
 </head>
 <body>
@@ -910,6 +915,45 @@ const vio = new IntersectionObserver(es => es.forEach(e => {
   else v.pause();
 }), { threshold: 0.25 });
 document.querySelectorAll('video').forEach(v => { v.muted = true; vio.observe(v); });
+/* Carrosséis: rolam sozinhos, dá para arrastar e voltam a rolar ao soltar */
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.lane').forEach(lane => {
+  const track = lane.querySelector('.track'); if (!track) return;
+  const dur = parseFloat(getComputedStyle(track).animationDuration) || 40;
+  track.classList.add('js-drive');
+  let half = track.scrollWidth / 2;
+  const auto = reduce ? 0 : -(half / dur);      // px por segundo (para a esquerda)
+  let x = 0, v = auto, target = auto, last = performance.now();
+  let down = false, dragged = false, startX = 0, startPos = 0, lastX = 0, lastT = 0;
+  const wrap = () => { if (half > 0) { while (x <= -half) x += half; while (x > 0) x -= half; } };
+  function frame(t) {
+    const dt = Math.min(0.05, (t - last) / 1000); last = t;
+    if (!down) { v += (target - v) * Math.min(1, dt * 2.5); x += v * dt; wrap(); }
+    track.style.transform = 'translate3d(' + x + 'px,0,0)';
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  window.addEventListener('resize', () => { half = track.scrollWidth / 2; });
+  lane.addEventListener('pointerdown', e => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    down = true; dragged = false; startX = lastX = e.clientX; startPos = x; lastT = performance.now(); v = 0;
+  });
+  window.addEventListener('pointermove', e => {
+    if (!down) return;
+    const dx = e.clientX - startX;
+    if (!dragged && Math.abs(dx) > 6) { dragged = true; lane.classList.add('dragging'); try { lane.setPointerCapture(e.pointerId); } catch (_) {} }
+    if (!dragged) return;
+    const now = performance.now(), dt = (now - lastT) / 1000;
+    if (dt > 0) v = (e.clientX - lastX) / dt;
+    lastX = e.clientX; lastT = now;
+    x = startPos + dx; wrap(); startPos = x - dx;
+  });
+  const up = () => { if (!down) return; down = false; lane.classList.remove('dragging'); v = Math.max(-3000, Math.min(3000, v)); };
+  window.addEventListener('pointerup', up); window.addEventListener('pointercancel', up);
+  lane.addEventListener('click', e => { if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; } }, true);
+  lane.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') target = 0; });
+  lane.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') target = auto; });
+});
 /* Toque na foto para ampliar */
 const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
 const closeLb = () => lb.classList.remove('open');
