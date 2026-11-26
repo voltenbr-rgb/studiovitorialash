@@ -915,6 +915,9 @@ const vio = new IntersectionObserver(es => es.forEach(e => {
   else v.pause();
 }), { threshold: 0.25 });
 document.querySelectorAll('video').forEach(v => { v.muted = true; vio.observe(v); });
+const visibleVideos = new Set();
+document.querySelectorAll('video').forEach(v => new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? visibleVideos.add(v) : visibleVideos.delete(v)), { threshold: 0.25 }).observe(v));
+setInterval(() => visibleVideos.forEach(v => { if (v.paused && !document.hidden) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } }), 1500);
 /* Carrosséis: rolam sozinhos, dá para arrastar e voltam a rolar ao soltar */
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('.lane').forEach(lane => {
@@ -953,12 +956,17 @@ document.querySelectorAll('.lane').forEach(lane => {
     v = dragged ? Math.max(-2500, Math.min(2500, v)) : 0;   // pequeno embalo do gesto
     target = 0;                                             // para onde ela soltou...
     clearTimeout(hold);
-    hold = setTimeout(() => { if (!hovering) target = auto; }, 2000); // ...e volta a rolar após 2 s
+    hold = setTimeout(() => { if (!hovering) target = auto; }, 1000); // ...e volta a rolar após 1 s
   };
   window.addEventListener('pointerup', up); window.addEventListener('pointercancel', up);
+  window.addEventListener('touchend', up, { passive: true }); window.addEventListener('touchcancel', up, { passive: true });
+  window.addEventListener('blur', up); window.addEventListener('scroll', () => { if (down && !dragged) up(); }, { passive: true });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) up(); });
+  // segurança: se o "soltar" se perder, libera sozinho
+  setInterval(() => { if (down && performance.now() - lastT > 1200) up(); }, 400);
   lane.addEventListener('click', e => { if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; } }, true);
   lane.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovering = true; target = 0; } });
-  lane.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovering = false; if (!down) { clearTimeout(hold); hold = setTimeout(() => { target = auto; }, 2000); } } });
+  lane.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovering = false; if (!down) { clearTimeout(hold); hold = setTimeout(() => { target = auto; }, 1000); } } });
 });
 /* Toque na foto para ampliar */
 const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
