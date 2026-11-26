@@ -7,7 +7,7 @@ Site de uma página (HTML estático) para o studio de extensão de cílios da Vi
 - `assets/` — fotos, capas e vídeos
 
 ## Editar
-- **WhatsApp:** no fim do `index.html`, troque `55[NUMERO]` pelo número com 55 + DDD (ex.: `5567999999999`). Todos os botões de agendar usam esse número.
+- **WhatsApp:** no fim do `index.html`, o número fica em `const WHATSAPP` (55 + DDD + número). Todos os botões de agendar usam esse número.
 - **Fotos/vídeos:** coloque o arquivo em `assets/` e troque o nome no `index.html`.
 
 ## Publicar no Cloudflare Pages
