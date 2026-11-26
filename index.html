@@ -923,12 +923,12 @@ document.querySelectorAll('.lane').forEach(lane => {
   track.classList.add('js-drive');
   let half = track.scrollWidth / 2;
   const auto = reduce ? 0 : -(half / dur);      // px por segundo (para a esquerda)
-  let x = 0, v = auto, target = auto, last = performance.now();
+  let x = 0, v = auto, target = auto, last = performance.now(), hold = null, hovering = false;
   let down = false, dragged = false, startX = 0, startPos = 0, lastX = 0, lastT = 0;
   const wrap = () => { if (half > 0) { while (x <= -half) x += half; while (x > 0) x -= half; } };
   function frame(t) {
     const dt = Math.min(0.05, (t - last) / 1000); last = t;
-    if (!down) { v += (target - v) * Math.min(1, dt * 2.5); x += v * dt; wrap(); }
+    if (!down) { v += (target - v) * Math.min(1, dt * (target === 0 ? 5 : 1.5)); x += v * dt; wrap(); }
     track.style.transform = 'translate3d(' + x + 'px,0,0)';
     requestAnimationFrame(frame);
   }
@@ -936,7 +936,7 @@ document.querySelectorAll('.lane').forEach(lane => {
   window.addEventListener('resize', () => { half = track.scrollWidth / 2; });
   lane.addEventListener('pointerdown', e => {
     if (e.pointerType === 'mouse' && e.button !== 0) return;
-    down = true; dragged = false; startX = lastX = e.clientX; startPos = x; lastT = performance.now(); v = 0;
+    down = true; dragged = false; startX = lastX = e.clientX; startPos = x; lastT = performance.now(); v = 0; clearTimeout(hold);
   });
   window.addEventListener('pointermove', e => {
     if (!down) return;
@@ -948,11 +948,17 @@ document.querySelectorAll('.lane').forEach(lane => {
     lastX = e.clientX; lastT = now;
     x = startPos + dx; wrap(); startPos = x - dx;
   });
-  const up = () => { if (!down) return; down = false; lane.classList.remove('dragging'); v = Math.max(-3000, Math.min(3000, v)); };
+  const up = () => {
+    if (!down) return; down = false; lane.classList.remove('dragging');
+    v = dragged ? Math.max(-2500, Math.min(2500, v)) : 0;   // pequeno embalo do gesto
+    target = 0;                                             // para onde ela soltou...
+    clearTimeout(hold);
+    hold = setTimeout(() => { if (!hovering) target = auto; }, 2000); // ...e volta a rolar após 2 s
+  };
   window.addEventListener('pointerup', up); window.addEventListener('pointercancel', up);
   lane.addEventListener('click', e => { if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; } }, true);
-  lane.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') target = 0; });
-  lane.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') target = auto; });
+  lane.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovering = true; target = 0; } });
+  lane.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovering = false; if (!down) { clearTimeout(hold); hold = setTimeout(() => { target = auto; }, 2000); } } });
 });
 /* Toque na foto para ampliar */
 const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
